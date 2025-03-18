@@ -9,7 +9,7 @@ import com.example.bomberman.affichage;
 
 import java.io.IOException;
 
-public class HelloApplication extends Application {
+public class main extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         // Créer un conteneur racine
