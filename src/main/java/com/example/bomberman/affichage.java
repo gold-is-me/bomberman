@@ -17,15 +17,16 @@ public class affichage {
         this.width = width;
         this.height = height;
 
-        // Charger l'image à partir du chemin
-        this.image = new Image(imagePath);
-        this.imageView = new ImageView(this.image);
 
         // Configurer les dimensions et la position
         this.imageView.setFitWidth(width);
         this.imageView.setFitHeight(height);
         this.imageView.setX(positionX);
         this.imageView.setY(positionY);
+
+        // Charger l'image à partir du chemin
+        this.image = new Image(imagePath);
+        this.imageView = new ImageView(this.image);
     }
     public ImageView getImageView(){
         return imageView;
