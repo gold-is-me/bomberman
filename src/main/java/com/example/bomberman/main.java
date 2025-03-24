@@ -14,22 +14,30 @@ public class main extends Application {
     public void start(Stage stage) {
         Pane root = new Pane();
         Scene scene = new Scene(root, 800, 600);
-
-        map map = new map(10, 13, root);
+        map map = new map(20, 13, root);
 
 
         // Initialisation des entités
-        joueur = new personnage("C:\\Users\\d.dilillo\\IdeaProjects\\java\\bomberman\\src\\main\\resources\\com\\example\\bomberman\\Bomberman Enemies  Miscellaneous.png", 64, 64);
+        joueur = new personnage("C:\\Users\\d.dilillo\\IdeaProjects\\java\\bomberman\\src\\main\\resources\\com\\example\\bomberman\\Bomberman Enemies  Miscellaneous.png", 32, 32);
         root.getChildren().add(joueur.getImageView());
 
 
-        // Attacher les contrôles du joueur
+//        // Attacher les contrôles du joueur
         scene.setOnKeyPressed(event -> {
             switch (event.getCode()) {
-                case UP -> joueur.move(0,-joueur.getVitesse());
-                case DOWN -> joueur.move(0,joueur.getVitesse());
-                case LEFT -> joueur.move(-joueur.getVitesse(), 0);
-                case RIGHT -> joueur.move(joueur.getVitesse(), 0);
+                case UP -> joueur.moveUp();
+                case DOWN -> joueur.moveDown();
+                case LEFT -> joueur.moveLeft();
+                case RIGHT -> joueur.moveRight();
+            }
+        });
+
+        scene.setOnKeyReleased(event -> {
+            switch (event.getCode()) {
+                case UP -> joueur.stopMovingUp();
+                case DOWN -> joueur.stopMovingDown();
+                case LEFT -> joueur.stopMovingLeft();
+                case RIGHT -> joueur.stopMovingRight();
             }
         });
 

@@ -12,8 +12,7 @@ public class gameloop extends AnimationTimer {
 
     @Override
     public void handle(long now) {
-        // Mettre à jour les animations et la logique des entités
-        joueur.mettreAJour();
-        // On pourrait aussi mettre à jour les ennemis et les bombes ici
+        joueur.move();
+//        joueur.mettreAJour();
     }
 }
